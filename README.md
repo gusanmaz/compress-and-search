@@ -1,3 +1,4 @@
+# Compression And Exact Search Algorithms (Experimentation)
 ## Overview
 
 This project implements various compression/decompression algorithms and string search algorithms. The implemented algorithms are:
@@ -149,6 +150,7 @@ Each program requires specific command-line arguments to run. Below are the exam
 1. **Huffman Compression**
 
 ```bash
+cd huffman
 ./bin/encode <input file> <output file> <stats file>
 ```
 
@@ -162,6 +164,7 @@ Example:
 2. **Huffman Decompression**
 
 ```bash
+cd huffman
 ./bin/decode <input file> <output file> <stats file>
 ```
 
@@ -175,6 +178,7 @@ Example:
 3. **LZW Compression**
 
 ```bash
+cd lzw
 ./bin/encode <input file> <output file> <stats file>
 ```
 
@@ -188,6 +192,7 @@ Example:
 4. **LZW Decompression**
 
 ```bash
+cd lzw
 ./bin/decode <input file> <output file> <stats file>
 ```
 
@@ -201,6 +206,7 @@ Example:
 5. **Shannon-Fano Compression**
 
 ```bash
+cd sfano
 ./bin/encode <input file> <output file> <stats file>
 ```
 
@@ -214,6 +220,7 @@ Example:
 6. **Shannon-Fano Decompression**
 
 ```bash
+cd sfano
 ./bin/decode <input file> <output file> <stats file>
 ```
 
@@ -227,6 +234,7 @@ Example:
 7. **Karp-Rabin String Search**
 
 ```bash
+cd karprabin
 ./bin/search <pattern> <input file> <stats file>
 ```
 
@@ -240,6 +248,7 @@ Example:
 8. **KMP String Search**
 
 ```bash
+cd kmp
 ./bin/search <pattern> <input file> <stats file>
 ```
 
@@ -272,38 +281,43 @@ The project includes two example files that end with `_plain.txt`, which can be 
 Compress `example_plain.txt` and then decompress the result:
 
 ```bash
-./huffman/bin/encode example_plain.txt example_huffman_encoded.bin huffman_stats.json
-./huffman/bin/decode example_huffman_encoded.bin example_huffman_decoded.txt huffman_stats.json
+cd huffman
+./bin/encode example_plain.txt example_huffman_encoded.bin huffman_stats.json
+./bin/decode example_huffman_encoded.bin example_huffman_decoded.txt huffman_stats.json
 ``` 
 2. **LZW Compression and Decompression**
 
 Compress `example_plain.txt` and then decompress the result:
 
 ```bash
-./lzw/bin/encode example_plain.txt example_lzw_encoded.bin lzw_stats.json
-./lzw/bin/decode example_lzw_encoded.bin example_lzw_decoded.txt lzw_stats.json
+cd lzw
+./bin/encode example_plain.txt example_lzw_encoded.bin lzw_stats.json
+./bin/decode example_lzw_encoded.bin example_lzw_decoded.txt lzw_stats.json
 ``` 
 3. **Shannon-Fano Compression and Decompression**
 
 Compress `example_plain.txt` and then decompress the result:
 
 ```bash
-./sfano/bin/encode example_plain.txt example_sfano_encoded.bin sfano_stats.json
-./sfano/bin/decode example_sfano_encoded.bin example_sfano_decoded.txt sfano_stats.json
+cd sfano
+./bin/encode example_plain.txt example_sfano_encoded.bin sfano_stats.json
+./bin/decode example_sfano_encoded.bin example_sfano_decoded.txt sfano_stats.json
 ``` 
 4. **Karp-Rabin String Search**
 
 Search for a pattern in `example_plain.txt`:
 
 ```bash
-./karprabin/bin/search "pattern" example_plain.txt karprabin_stats.json
+cd karprabin
+./bin/search "pattern" example_plain.txt karprabin_stats.json
 ``` 
 5. **KMP String Search**
 
 Search for a pattern in `example_plain.txt`:
 
 ```bash
-./kmp/bin/search "pattern" example_plain.txt kmp_stats.json
+cd kmp
+./bin/search "pattern" example_plain.txt kmp_stats.json
 ```
 ## Shell Script
 
@@ -327,4 +341,4 @@ Example:
 
 
 
-This will display the context around byte position 10 in `example_plain.txt`.---
+This will display the context around byte position 10 in `example_plain.txt`.
